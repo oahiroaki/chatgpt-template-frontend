@@ -1,13 +1,9 @@
 import { useState } from "react"
-
-interface ChatMessage {
-  content: string
-  role: string
-}
-
+import ChatMessage from "../model/ChatMessage"
+import ChatMessageCard from "./ChatMessageCard"
 
 function ChatMessages() {
-  const chatMessages = useState<ChatMessage[]>([
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     {
       role: "user",
       content: "test"
@@ -16,9 +12,7 @@ function ChatMessages() {
 
   return (
     <div>
-      {chatMessages.map((chatMessage) => {
-        return <ChatMessage chatMessage={chatMessage} />
-      }}
+      {chatMessages.map(chatMessage => <ChatMessageCard chatMessage={chatMessage} />)}
     </div>
   )
 }

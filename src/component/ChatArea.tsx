@@ -1,4 +1,5 @@
 import ChatInput from "./ChatInput"
+import ChatMessages from "./ChatMessages"
 
 function ChatArea() {
   return (
